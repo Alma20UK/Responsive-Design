@@ -1,0 +1,173 @@
+html {
+    background-image: linear-gradient(#F0E68C, #FFB6C1);
+    min-height: 100%;
+}
+
+body  {
+    font-family: 'Tiro Gurmukhi', serif;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+a:visited:hover {
+    color: #20B2AA;
+}
+
+
+h1, h2, h3, p {
+    padding: 1rem;  
+}
+
+p {
+    font-size: 1.25rem;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+h3 {
+    display: inline;
+    padding: 0.5rem;
+}
+
+.omegaContainer {
+    padding: 3rem;
+}
+
+
+
+/*
+/* Flex-Box Styling
+*/
+
+.flexContainer {  
+    border: 0.25em solid black;
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: row; /* this makes the parent container a row so that the children will fall into columns */
+    justify-content: center;
+    flex-wrap: wrap; 
+    /*gap: 1rem; can use this to add gaps between items within a flexbox */
+}
+
+.flexBox {
+    border: 0.25em solid black;
+    border-radius: 1rem;
+    margin: 2rem; 
+    flex-grow: 1; /* make the elements grow to fill the flexbox container */
+    flex-basis: 25%; /* how much of the box to fill up per element, means I can remove a max-width */
+}
+
+
+
+/*
+/* Grid Styling
+*/
+
+.gridContainer {
+    border: 0.25em solid black;
+    border-radius: 1rem;
+    padding: 2rem;
+    display: grid;
+    /*grid-auto-flow: column;
+    grid-template-columns: repeat(3, 1fr);*/
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.gridBox, .gridBox, .gridBox, .gridBox, .gridBox, .gridBox {
+    max-width: 20rem;
+    border: 0.25em solid black;
+    border-radius: 1rem;
+    margin: 2rem; 
+}
+
+/*
+/* Text Clamp
+*/
+
+.textClampHeader {
+    font-size: clamp(1.5rem, 5vw, 4rem); /* first value is the minimum, second value is the preferred, third value is the max*/
+}
+
+.textClampH2 {
+    font-size: clamp(1rem, 5vw, 2rem);
+}
+
+.textClampP {
+    font-size: clamp(0.5rem, 3vw, 2rem);
+}
+
+
+
+/*
+/* Responsive Test Layout - Mimicing Georges' website 
+*/
+
+.headerContainer {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.nestleLogo {
+    padding: 2em;
+   
+}
+
+.nestleLogo img {
+    max-width: 15em;
+    height: auto;
+ 
+}
+
+.nestleNavigation {
+    flex-grow: 1;
+    flex-basis: 10%;
+    font-size: 0.8em;
+    padding: 1em;
+    align-self: center;
+    text-align: end;
+}
+
+.homepageImage {
+    min-height: 20em;
+    width: 100%;
+    background-image: url("../Media/dukeStreet2.webp");   
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.homepageContent {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    padding: 4em;
+}
+
+.homepageText {
+    align-items: flex-end;
+}
+
+@media only screen and (max-width: 900px) {
+
+    .headerContainer {
+        flex-direction: column;
+    }
+
+    .nestleNavigation {
+        align-self: center;
+    }
+}
